@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "paas4saas": {
+    "angular-gantt": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/paas4saas",
+            "outputPath": "dist/angular-gantt",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "paas4saas:build"
+            "browserTarget": "angular-gantt:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "paas4saas:build:production"
+              "browserTarget": "angular-gantt:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "paas4saas:build"
+            "browserTarget": "angular-gantt:build"
           }
         },
         "test": {
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "paas4saas:serve"
+            "devServerTarget": "angular-gantt:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "paas4saas:serve:production"
+              "devServerTarget": "angular-gantt:serve:production"
             }
           }
         },
@@ -130,5 +130,5 @@
       }
     }
   },
-  "defaultProject": "paas4saas"
+  "defaultProject": "angular-gantt"
 }
