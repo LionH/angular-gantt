@@ -1,141 +1,75 @@
-<div class="control-section">
-  <div class="col-lg-8 content-wrapper">
-      <ejs-gantt id="ganttDefault" #gantt height="500px" [dataSource]="data" [taskFields]="taskSettings"
-          [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
-          [treeColumnIndex]="1" height="520px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-          [highlightWeekends]="true" [eventMarkers]="eventMarkers" resourceNameMapping="resourceName" resourceIDMapping="resourceId"
-          [resources]="resources" collapseAllParentTasks="true">
-      </ejs-gantt>
-  </div>
-
-  <div class="col-lg-4 property-section">
-      <div class="property-panel-section">
-          <div class="property-panel-header">Properties</div>
-          <div class="property-panel-content">
-              <div id="property" class="property-panel-table" title="Properties">
-                  <table id="property" title="Properties" style="width: 100%">
-                      <tbody>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div>Unit width</div>
-                              </td>
-                              <td style="width: 70%;">
-                                  <div>
-                                      <ejs-numerictextbox #unitWidth id="unitWidth" value="33"
-                                          (change)="onUnitWidthChange($event)" [min]="10" format="n">
-                                      </ejs-numerictextbox>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div><b>Top tier</b></div>
-                              </td>
-                              <td style="width: 70%;">
-                                  <div>
-                                      <ejs-checkbox [checked]="true" (change)="onTopTierChange($event)">
-                                      </ejs-checkbox>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div>Count</div>
-                              </td>
-                              <td style="width: 70%">
-                                  <div id='numericbox'>
-                                      <ejs-numerictextbox #topCount id=" count" value="1"
-                                          (change)="onTopCountChange($event)" format="n">
-                                      </ejs-numerictextbox>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div>
-                                      Unit
-                                  </div>
-                              </td>
-                              <td style="width: 70%">
-                                  <div>
-                                      <ejs-dropdownlist #topUnit id='unit' [dataSource]='unit'
-                                          (change)='onChangeUnit($event)' [value]='unitValue' [fields]='unitFields'>
-                                      </ejs-dropdownlist>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div>
-                                      Format
-                                  </div>
-                              </td>
-                              <td style="width: 70%">
-                                  <div>
-                                      <ejs-dropdownlist #topFormatDropdown id='format' [dataSource]='weekformat'
-                                          (change)='onChangeFormat($event)' [value]='topFormatValue'
-                                          [fields]='formatFields'>
-                                      </ejs-dropdownlist>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div><b>Bottom tier</b></div>
-                              </td>
-                              <td style="width: 70%">
-                                  <div>
-                                      <ejs-checkbox [checked]="true" id="bottomTierCheck"
-                                          (change)="onBottomTierChange($event)">
-                                      </ejs-checkbox>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div>Count</div>
-                              </td>
-                              <td style="width: 70%">
-                                  <div id='numericbox'>
-                                      <ejs-numerictextbox #bottomCount id="btCount" value="1"
-                                          (change)="onBottomCountChange($event)" format="n"></ejs-numerictextbox>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div>
-                                      Unit
-                                  </div>
-                              </td>
-                              <td style="width: 70%">
-                                  <div>
-                                      <ejs-dropdownlist #bottomUnit id='btUnit' [dataSource]='unit'
-                                          (change)='onChangebtUnit($event)' [value]='bottomUnitValue'
-                                          [fields]='unitFields'>
-                                      </ejs-dropdownlist>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="width: 30%">
-                                  <div>
-                                      Format
-                                  </div>
-                              </td>
-                              <td style="width: 70%">
-                                  <div>
-                                      <ejs-dropdownlist #bottomFormatDropdown id='btFormat' [dataSource]='dayformat'
-                                          (change)='onChangebtFormat($event)' [fields]='formatFields'>
-                                      </ejs-dropdownlist>
-                                  </div>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
+<div class="col-lg-4 property-section">
+  <div class="property-panel-section">
+      <div class="property-panel-content">
+          <div id="property" class="property-panel-table" title="Properties">
+              <table id="property" title="Properties" style="width: 100%">
+                  <tbody>
+                      <tr>
+                          <td style="width: 10%">
+                              <div>
+                                  Unidades del primer encabezado
+                              </div>
+                          </td>
+                          <td style="width: 20%">
+                              <div>
+                                  <ejs-dropdownlist #topUnit id='unit' [dataSource]='unit'
+                                      (change)='onChangeUnit($event)' [value]='unitValue' [fields]='unitFields'>
+                                  </ejs-dropdownlist>
+                              </div>
+                          </td>
+                          <td style="width: 5%"></td>
+                          <td style="width: 10%">
+                            <div>
+                                Formato del primer encabezado
+                            </div>
+                          </td>
+                          <td style="width: 20%">
+                              <div>
+                                  <ejs-dropdownlist #topFormatDropdown id='format' [dataSource]='weekformat'
+                                      (change)='onChangeFormat($event)' [value]='topFormatValue'
+                                      [fields]='formatFields'>
+                                  </ejs-dropdownlist>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <div>
+                                Unidades del segundo encabezado
+                              </div>
+                          </td>
+                          <td>
+                              <div>
+                                  <ejs-dropdownlist #bottomUnit id='btUnit' [dataSource]='unit'
+                                      (change)='onChangebtUnit($event)' [value]='bottomUnitValue'
+                                      [fields]='unitFields'>
+                                  </ejs-dropdownlist>
+                              </div>
+                          </td>
+                          <td></td>
+                          <td>
+                              <div>
+                                Formato del segundo encabezado
+                              </div>
+                          </td>
+                          <td>
+                              <div>
+                                  <ejs-dropdownlist #bottomFormatDropdown id='btFormat' [dataSource]='dayformat'
+                                      (change)='onChangebtFormat($event)' [fields]='formatFields'>
+                                  </ejs-dropdownlist>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
           </div>
       </div>
   </div>
 </div>
+<ejs-gantt id="ganttDefault" #gantt height="750px" [dataSource]="data" [taskFields]="taskSettings"
+          [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
+          [treeColumnIndex]="1" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+          [highlightWeekends]="true" [eventMarkers]="eventMarkers" resourceNameMapping="resourceName" resourceIDMapping="resourceId"
+          [resources]="resources" collapseAllParentTasks="true">
+</ejs-gantt>
 <router-outlet></router-outlet>

@@ -14,23 +14,23 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('gantt', {static: true})
   public ganttObj: GanttComponent;
   public yearformat: { [key: string]: string }[] = [
-      { id: 'MMM "yy', format: 'Jan "18' },
+      { id: 'MMM "yy', format: 'Ene "18' },
       { id: 'y', format: '2018' },
-      { id: 'MMMM, y', format: 'January, 18' },
+      { id: 'MMMM, y', format: 'Enero, 18' },
   ];
   public monthformat: { [key: string]: string }[] = [
-      { id: 'MMM dd, yyyy', format: 'Jan 01, 2018' },
-      { id: 'MMMM', format: 'January' },
-      { id: 'MMM', format: 'Jan' },
+      { id: 'dd/MM/yyyy', format: '13/01/2018' },
+      { id: 'MMMM', format: 'Enero' },
+      { id: 'MMM', format: 'Ene' },
   ];
   public weekformat: { [key: string]: string }[] = [
-      { id: 'MMM dd, yyyy', format: 'Jan 01, 2019' },
-      { id: 'EEE MMM dd, "yy', format: 'Mon Jan 01, "19' },
-      { id: 'EEE MMM dd', format: 'Mon Jan 01' },
+      { id: 'dd/MM/yyyy', format: '13/01/2019' },
+      { id: 'EEE MMM dd, "yy', format: 'Lun Ene 01, "19' },
+      { id: 'EEE MMM dd', format: 'Lun Ene 01' },
   ];
   public dayformat: { [key: string]: string }[] = [
-      { id: 'EEE, dd', format: 'Mon, 01' },
-      { id: 'E', format: 'Mon' },
+      { id: 'EEE, dd', format: 'Lun, 01' },
+      { id: 'E', format: 'Lun' },
       { id: 'dd', format: '01' },
   ];
   public hourformat: { [key: string]: string }[] = [
@@ -39,11 +39,11 @@ export class AppComponent implements OnInit, AfterViewInit {
       { id: 'h : mm a', format: '0 : 00 AM' },
   ];
   public unit: { [key: string]: string }[] = [
-      { id: 'Year', unit: 'Year' },
-      { id: 'Month', unit: 'Month' },
-      { id: 'Week', unit: 'Week' },
-      { id: 'Day', unit: 'Day' },
-      { id: 'Hour', unit: 'Hour' }
+      { id: 'Year', unit: 'Año' },
+      { id: 'Month', unit: 'Mes' },
+      { id: 'Week', unit: 'Semana' },
+      { id: 'Day', unit: 'Día' },
+      { id: 'Hour', unit: 'Hora' }
   ];
   // maps the appropriate column to fields property
   public formatFields: object = { text: 'format', value: 'id' };
@@ -226,6 +226,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       } else if (bootomCellUnit === 'Hour') {
           unitWidth = 25;
       }
-      this.unitWidthNumericObject.value = unitWidth;
+      //this.unitWidthNumericObject.value = unitWidth;
   }
 }
